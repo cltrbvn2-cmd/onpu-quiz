@@ -21818,6 +21818,8 @@
             const isPicked = phase === "wrong" && i === picked;
             const lit = isAnswer;
             const label = showLabels || phase !== "asking";
+            const circleBg = lit || showLabels && phase === "asking" ? n.color : "#7A7873";
+            const circleFg = circleBg === "#FFC000" ? "#4A3A00" : "#fff";
             return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
               "button",
               {
@@ -21849,8 +21851,8 @@
                       maxWidth: 34,
                       aspectRatio: "1",
                       borderRadius: "50%",
-                      background: lit || showLabels && phase === "asking" ? n.color : "#D9D6CF",
-                      color: n.color === "#FFC000" ? "#4A3A00" : "#fff",
+                      background: circleBg,
+                      color: circleFg,
                       display: label ? "grid" : "none",
                       placeItems: "center",
                       fontSize: "clamp(11px, 3.2vw, 15px)",
